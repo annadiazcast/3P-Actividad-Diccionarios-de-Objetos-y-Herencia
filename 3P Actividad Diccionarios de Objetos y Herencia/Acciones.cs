@@ -42,6 +42,7 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
                 Console.WriteLine("Modelo: "+co.Value.Modelo);
                 Console.WriteLine("Año: "+co.Value.Año);
                 Console.WriteLine("No. Puertas: "+co.Value.NumPuertas);
+                Console.WriteLine("");
 
             }
         }
@@ -49,7 +50,40 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
         {
             Console.WriteLine("Dame el ID a actualizar");
             int id=Convert.ToInt32(Console.ReadLine());
-            var coche = diccionarioCoche.FirstOrDefault(x => x.Value.Id == id);
+            //var coche = diccionarioCoche.FirstOrDefault(x => x.Value.Id == id);
+            if (diccionarioCoche.ContainsKey(id))
+            {
+                Console.WriteLine("Dame la nueva matricula");
+                //coche.Value.Id=Convert.ToInt32(Console.ReadLine());
+                int idnuevo = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Dame la nueva marca");
+                string marcanueva = Console.ReadLine();
+                //coche.Value.Marca=Console.ReadLine();
+                Console.WriteLine("Dame el nuevo modelo");
+                string modelonuevo = Console.ReadLine();
+                //coche.Value.Modelo=Console.ReadLine();
+                Console.WriteLine("Dame el nuevo año");
+                int añonuevo = Convert.ToInt32(Console.ReadLine());
+                //coche.Value.Año=Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Dame el nuevo numero de puertas");
+                int numpuertasnuevo = Convert.ToInt32(Console.ReadLine());
+                //coche.Value.NumPuertas=Convert.ToInt32(Console.ReadLine());}
+
+                coche.Value.Id = idnuevo;
+                coche.Value.Marca = marcanueva;
+                coche.Value.Modelo = modelonuevo;
+                coche.Value.Año = añonuevo;
+                coche.Value.NumPuertas = numpuertasnuevo;
+                Console.WriteLine("Los datos se actualizaron correctamente");
+            }
+            else
+            {
+                Console.WriteLine("No se encontro el ID");
+            }
+          
+            
+
+
         }
         public void EliminarCoche()
         {
@@ -91,7 +125,20 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
         }
         public void ActualizarCamion()
         {
+            Console.WriteLine("Dame el ID a actualizar");
+            int id = Convert.ToInt32(Console.ReadLine());
+            var camion=diccionarioCamion.FirstOrDefault(x => x.Value.Id == id);
 
+            Console.WriteLine("Dame la nueva matricula");
+            camion.Value.Id = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame la nueva marca");
+            camion.Value.Marca = Console.ReadLine();
+            Console.WriteLine("Dame el nuevo modelo");
+            camion.Value.Modelo = Console.ReadLine();
+            Console.WriteLine("Dame el nuevo año");
+            camion.Value.Año = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Dame el nuevo numero de puertas");
+            camion.Value.CapacidadCarga=Convert.ToInt32(Console.ReadLine());
         }
         public void EliminarCamion()
         {
