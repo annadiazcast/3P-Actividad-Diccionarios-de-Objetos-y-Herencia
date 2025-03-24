@@ -54,11 +54,11 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
         }
         static Menu menu()
         {
-            Console.WriteLine("1.Agregar Coche");
+            Console.WriteLine("1. Agregar Coche");
             Console.WriteLine("2. Mostrar Coches");
             Console.WriteLine("3. Actualizar Coche");
             Console.WriteLine("4. Eliminar Coche");
-            Console.WriteLine("5.Agregar Camión");
+            Console.WriteLine("5. Agregar Camión");
             Console.WriteLine("6. Mostrar Camión");
             Console.WriteLine("7. Actualizar Camión");
             Console.WriteLine("8. Eliminar Camión");

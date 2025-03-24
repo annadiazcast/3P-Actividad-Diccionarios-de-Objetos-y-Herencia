@@ -51,7 +51,7 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
             Console.WriteLine("Dame el ID a actualizar");
             int id=Convert.ToInt32(Console.ReadLine());
             var coche = diccionarioCoche.FirstOrDefault(x => x.Value.Id == id);
-            if (diccionarioCoche.ContainsKey(id))
+            if (coche.Value!=null)
             {
                 Console.WriteLine("Dame la nueva matricula");
                 //coche.Value.Id=Convert.ToInt32(Console.ReadLine());
@@ -129,16 +129,35 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
             int id = Convert.ToInt32(Console.ReadLine());
             var camion=diccionarioCamion.FirstOrDefault(x => x.Value.Id == id);
 
-            Console.WriteLine("Dame la nueva matricula");
-            camion.Value.Id = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Dame la nueva marca");
-            camion.Value.Marca = Console.ReadLine();
-            Console.WriteLine("Dame el nuevo modelo");
-            camion.Value.Modelo = Console.ReadLine();
-            Console.WriteLine("Dame el nuevo año");
-            camion.Value.Año = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Dame el nuevo numero de puertas");
-            camion.Value.CapacidadCarga=Convert.ToInt32(Console.ReadLine());
+            if (camion.Value != null)
+            {
+                Console.WriteLine("Dame la nueva matricula");
+                //coche.Value.Id=Convert.ToInt32(Console.ReadLine());
+                int idnuevo = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Dame la nueva marca");
+                string marcanueva = Console.ReadLine();
+                //coche.Value.Marca=Console.ReadLine();
+                Console.WriteLine("Dame el nuevo modelo");
+                string modelonuevo = Console.ReadLine();
+                //coche.Value.Modelo=Console.ReadLine();
+                Console.WriteLine("Dame el nuevo año");
+                int añonuevo = Convert.ToInt32(Console.ReadLine());
+                //coche.Value.Año=Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Dame la nueva capacidad de carga");
+                int capacidadnueva = Convert.ToInt32(Console.ReadLine());
+                //coche.Value.NumPuertas=Convert.ToInt32(Console.ReadLine());}
+
+                camion.Value.Id = idnuevo;
+                camion.Value.Marca = marcanueva;
+                camion.Value.Modelo = modelonuevo;
+                camion.Value.Año = añonuevo;
+                camion.Value.CapacidadCarga=capacidadnueva;
+                Console.WriteLine("Los datos se actualizaron correctamente");
+            }
+            else
+            {
+                Console.WriteLine("No se encontro el ID");
+            }
         }
         public void EliminarCamion()
         {
