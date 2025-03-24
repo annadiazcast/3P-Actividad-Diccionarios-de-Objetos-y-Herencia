@@ -50,7 +50,7 @@ namespace _3P_Actividad_Diccionarios_de_Objetos_y_Herencia
         {
             Console.WriteLine("Dame el ID a actualizar");
             int id=Convert.ToInt32(Console.ReadLine());
-            //var coche = diccionarioCoche.FirstOrDefault(x => x.Value.Id == id);
+            var coche = diccionarioCoche.FirstOrDefault(x => x.Value.Id == id);
             if (diccionarioCoche.ContainsKey(id))
             {
                 Console.WriteLine("Dame la nueva matricula");
